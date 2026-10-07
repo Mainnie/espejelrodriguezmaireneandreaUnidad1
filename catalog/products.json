@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "brand": "elf",
+    "name": "Halo Glow Liquid Filter",
+    "price": 349,
+    "desc": "Iluminador líquido que difumina la piel al instante para un efecto \"lit-from-within\".",
+    "rating": 4.7,
+    "img": "Halo Glow Liquid Filter"
+  },
+  {
+    "id": 2,
+    "brand": "elf",
+    "name": "Poreless Putty Primer",
+    "price": 279,
+    "desc": "Primer tipo mousse que minimiza poros y prepara la piel para un maquillaje duradero.",
+    "rating": 4.6,
+    "img": "Poreless Putty Primer"
+  },
+  {
+    "id": 3,
+    "brand": "elf",
+    "name": "Camo Concealer",
+    "price": 229,
+    "desc": "Corrector de alta cobertura, libre de crueldad, para cubrir ojeras e imperfecciones.",
+    "rating": 4.5,
+    "img": "Camo Concealer"
+  },
+  {
+    "id": 4,
+    "brand": "Fenty Beauty",
+    "name": "Gloss Bomb Universal Lip Luminizer",
+    "price": 459,
+    "desc": "Gloss no pegajoso con acabado espejo que favorece a cualquier tono de piel.",
+    "rating": 4.8,
+    "img": "Gloss Bomb"
+  },
+  {
+    "id": 5,
+    "brand": "Fenty Beauty",
+    "name": "Pro Filt'r Soft Matte Foundation",
+    "price": 699,
+    "desc": "Base de cobertura media-alta con acabado semi-mate, disponible en 50 tonos.",
+    "rating": 4.6,
+    "img": "Pro Filt'r Foundation"
+  },
+  {
+    "id": 6,
+    "brand": "Fenty Beauty",
+    "name": "Killawatt Highlighter",
+    "price": 659,
+    "desc": "Iluminador en polvo ultra pigmentado con acabado tipo foco.",
+    "rating": 4.7,
+    "img": "Killawatt Highlighter"
+  },
+  {
+    "id": 7,
+    "brand": "Rare Beauty",
+    "name": "Soft Pinch Liquid Blush",
+    "price": 529,
+    "desc": "Rubor líquido de larga duración que se difumina con los dedos para un efecto natural.",
+    "rating": 4.9,
+    "img": "Soft Pinch Blush"
+  },
+  {
+    "id": 8,
+    "brand": "Rare Beauty",
+    "name": "Positive Light Liquid Highlighter",
+    "price": 549,
+    "desc": "Iluminador líquido de brillo suave que se funde con la piel sin dejar brillos plateados.",
+    "rating": 4.7,
+    "img": "Positive Light Highlighter"
+  },
+  {
+    "id": 9,
+    "brand": "Rare Beauty",
+    "name": "Perfect Strokes Matte Liquid Liner",
+    "price": 479,
+    "desc": "Delineador de punta ultra fina con tinta mate resistente al agua por 16 horas.",
+    "rating": 4.6,
+    "img": "Perfect Strokes Liner"
+  },
+  {
+    "id": 10,
+    "brand": "Tarte",
+    "name": "Shape Tape Concealer",
+    "price": 559,
+    "desc": "Corrector cremoso de cobertura completa que ilumina e hidrata la piel.",
+    "rating": 4.8,
+    "img": "Shape Tape Concealer"
+  },
+  {
+    "id": 11,
+    "brand": "Tarte",
+    "name": "Maracuja Juicy Lip",
+    "price": 399,
+    "desc": "Bálsamo labial jugoso con un toque de color y aceite de maracuyá hidratante.",
+    "rating": 4.6,
+    "img": "Maracuja Juicy Lip"
+  },
+  {
+    "id": 12,
+    "brand": "Tarte",
+    "name": "Amazonian Clay Blush",
+    "price": 459,
+    "desc": "Rubor en polvo de larga duración con arcilla amazónica que nutre la piel.",
+    "rating": 4.5,
+    "img": "Amazonian Clay Blush"
+  },
+  {
+    "id": 13,
+    "brand": "Too Faced",
+    "name": "Better Than Sex Mascara",
+    "price": 489,
+    "desc": "Mascara voluminizadora icónica que da pestañas dramáticas sin grumos.",
+    "rating": 4.7,
+    "img": "Better Than Sex Mascara"
+  },
+  {
+    "id": 14,
+    "brand": "Too Faced",
+    "name": "Chocolate Bar Eyeshadow Palette",
+    "price": 829,
+    "desc": "Paleta de sombras con aroma a chocolate en tonos neutros y cálidos.",
+    "rating": 4.8,
+    "img": "Chocolate Bar Palette"
+  },
+  {
+    "id": 15,
+    "brand": "Too Faced",
+    "name": "Born This Way Foundation",
+    "price": 719,
+    "desc": "Base líquida de cobertura media-completa con acabado natural tipo segunda piel.",
+    "rating": 4.6,
+    "img": "Born This Way Foundation"
+  },
+  {
+    "id": 16,
+    "brand": "NARS",
+    "name": "Orgasm Blush",
+    "price": 599,
+    "desc": "El rubor icónico en tono durazno-rosa con un ligero brillo dorado.",
+    "rating": 4.9,
+    "img": "Orgasm Blush"
+  },
+  {
+    "id": 17,
+    "brand": "NARS",
+    "name": "Radiant Creamy Concealer",
+    "price": 649,
+    "desc": "Corrector cremoso de cobertura media que ilumina e hidrata sin marcar líneas.",
+    "rating": 4.7,
+    "img": "Radiant Creamy Concealer"
+  },
+  {
+    "id": 18,
+    "brand": "NARS",
+    "name": "Velvet Matte Lipstick",
+    "price": 509,
+    "desc": "Labial mate de larga duración con fórmula aterciopelada no resecante.",
+    "rating": 4.5,
+    "img": "Velvet Matte Lipstick"
+  }
+]

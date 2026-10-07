@@ -1,0 +1,7 @@
+node_modules/
+.git/
+.env
+data/orders.json
+data/orders.json.tmp
+*.log
+.DS_Store

@@ -1,0 +1,32 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    expose:
+      - "3000"
+    volumes:
+      - ./data:/app/data
+    networks:
+      - tienda
+
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - web
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - tienda
+
+networks:
+  tienda:
+
+volumes:
+  caddy_data:
+  caddy_config:
