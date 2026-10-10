@@ -2,4 +2,6 @@ node_modules/
 .env
 data/orders.json
 data/orders.json.tmp
+data/users.json
+data/users.json.tmp
 *.log
