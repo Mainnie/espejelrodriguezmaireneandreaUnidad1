@@ -2,6 +2,8 @@ services:
   web:
     build: .
     restart: unless-stopped
+    environment:
+      COOKIE_SECURE: "true"
     expose:
       - "3000"
     volumes:

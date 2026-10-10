@@ -12,6 +12,86 @@ function stars(v){const f=Math.round(v);return "★".repeat(f)+"☆".repeat(5-f)
 function reviewsFor(id){const a=REVIEW_POOL[id%6],b=REVIEW_POOL[(id+2)%6],c=REVIEW_POOL[(id+4)%6];return [a,b,c];}
 let cart = [];
 let currentBrand="Todos", currentSearch="";
+let CSRF_TOKEN = '';
+let authMode = 'login';
+
+function setAuthMode(mode){
+  authMode=mode;
+  const registering=mode==='register';
+  document.getElementById('nameField').hidden=!registering;
+  document.getElementById('authName').required=registering;
+  document.getElementById('authPassword').minLength=registering?12:1;
+  document.getElementById('authPassword').autocomplete=registering?'new-password':'current-password';
+  document.getElementById('passwordHint').hidden=!registering;
+  document.getElementById('authTitle').textContent=registering?'Crear cuenta':'Inicia sesión';
+  document.querySelector('.auth-intro').textContent=registering?'Crea una cuenta para entrar a la tienda.':'Ingresa a tu cuenta para ver la tienda.';
+  document.getElementById('authSubmit').textContent=registering?'Crear cuenta':'Iniciar sesión';
+  document.getElementById('loginTab').classList.toggle('selected',!registering);
+  document.getElementById('registerTab').classList.toggle('selected',registering);
+  document.getElementById('loginTab').setAttribute('aria-selected',String(!registering));
+  document.getElementById('registerTab').setAttribute('aria-selected',String(registering));
+  document.getElementById('authMessage').hidden=true;
+  document.getElementById('authPassword').value='';
+}
+document.getElementById('loginTab').addEventListener('click',()=>setAuthMode('login'));
+document.getElementById('registerTab').addEventListener('click',()=>setAuthMode('register'));
+document.getElementById('authForm').addEventListener('submit',async event=>{
+  event.preventDefault();
+  if(!event.currentTarget.reportValidity())return;
+  const submit=document.getElementById('authSubmit');
+  const message=document.getElementById('authMessage');
+  submit.disabled=true;
+  message.hidden=true;
+  const payload={email:document.getElementById('authEmail').value,password:document.getElementById('authPassword').value};
+  if(authMode==='register')payload.name=document.getElementById('authName').value;
+  try{
+    const response=await fetch(`/api/auth/${authMode}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||'No fue posible validar tu cuenta.');
+    CSRF_TOKEN=result.csrfToken;
+    document.getElementById('authPassword').value='';
+    await showStore();
+  }catch(error){
+    message.textContent=error.message||'No se pudo conectar con el servidor.';
+    message.hidden=false;
+  }finally{submit.disabled=false;}
+});
+
+function showAuth(message=''){
+  document.getElementById('storeApp').hidden=true;
+  document.getElementById('authScreen').hidden=false;
+  CSRF_TOKEN='';
+  cart=[];
+  updateCart();
+  const status=document.getElementById('authMessage');
+  status.textContent=message;
+  status.hidden=!message;
+}
+async function showStore(){
+  document.getElementById('authScreen').hidden=true;
+  document.getElementById('storeApp').hidden=false;
+  await loadProducts();
+}
+async function initializeAuth(){
+  try{
+    const response=await fetch('/api/auth/session',{cache:'no-store'});
+    const result=await response.json();
+    if(result.authenticated){CSRF_TOKEN=result.csrfToken;await showStore();}
+    else showAuth();
+  }catch{showAuth('No se pudo conectar con el servidor. Recarga la página e inténtalo de nuevo.');}
+}
+async function logout(){
+  try{
+    const response=await fetch('/api/auth/logout',{method:'POST',headers:{'X-CSRF-Token':CSRF_TOKEN}});
+    if(!response.ok)throw new Error('No se pudo cerrar la sesión. Recarga la página e inténtalo de nuevo.');
+    closeCheckout();
+    toggleCart(false);
+    setAuthMode('login');
+    document.getElementById('authForm').reset();
+    showAuth('La sesión se cerró correctamente.');
+  }catch(error){alert(error.message||'No se pudo conectar con el servidor.');}
+}
+
 function filterBrand(b,el){currentBrand=b;[...document.querySelectorAll('.brandbar button')].forEach(x=>x.classList.remove('active'));el.classList.add('active');render();}
 document.getElementById('searchInput').addEventListener('input',e=>{currentSearch=e.target.value.toLowerCase();render();});
 function render(){
@@ -40,6 +120,7 @@ async function loadProducts(){
   const grid=document.getElementById('grid');
   try {
     const response=await fetch('/api/products');
+    if(response.status===401){showAuth('Tu sesión terminó. Inicia sesión nuevamente.');return;}
     if(!response.ok) throw new Error('No se pudo cargar el catálogo');
     PRODUCTS=await response.json();
     const brands=['Todos',...new Set(PRODUCTS.map(p=>p.brand))];
@@ -49,7 +130,7 @@ async function loadProducts(){
     grid.innerHTML='<p style="color:#888">No se pudo conectar con el servidor. Inicia Node.js o Docker y recarga.</p>';
   }
 }
-loadProducts();
+initializeAuth();
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
   const line=cart.find(c=>c.id===id);
@@ -91,7 +172,7 @@ async function pay(){
   if(!name||!address){alert('Por favor ingresa tu nombre y dirección.');return;}
   let response, result;
   try {
-    response=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,address,items:cart.map(item=>({id:item.id,quantity:item.qty}))})});
+    response=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':CSRF_TOKEN},body:JSON.stringify({name,address,items:cart.map(item=>({id:item.id,quantity:item.qty}))})});
     result=await response.json();
   } catch { alert('No se pudo conectar con el servidor.');return; }
   if(!response.ok){alert(result.error||'No se pudo registrar el pedido.');return;}
