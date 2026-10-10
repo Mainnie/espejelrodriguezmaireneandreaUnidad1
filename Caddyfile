@@ -1,8 +1,8 @@
-:80 {
+http://localhost {
   redir https://localhost:8443{uri} 308
 }
 
-:443 {
+https://localhost {
   tls internal
   encode zstd gzip
   reverse_proxy web:3000

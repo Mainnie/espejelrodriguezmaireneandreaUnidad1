@@ -6,7 +6,7 @@
     "price": 349,
     "desc": "Iluminador líquido que difumina la piel al instante para un efecto \"lit-from-within\".",
     "rating": 4.7,
-    "img": "Halo Glow Liquid Filter"
+    "image": "/img/ELF Halo Glow Liquid Filter.jpeg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "price": 279,
     "desc": "Primer tipo mousse que minimiza poros y prepara la piel para un maquillaje duradero.",
     "rating": 4.6,
-    "img": "Poreless Putty Primer"
+    "image": "/img/ELF Poreless Putty Primer.jpeg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "price": 229,
     "desc": "Corrector de alta cobertura, libre de crueldad, para cubrir ojeras e imperfecciones.",
     "rating": 4.5,
-    "img": "Camo Concealer"
+    "image": "/img/ELF Camo Concealer.jpeg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "price": 459,
     "desc": "Gloss no pegajoso con acabado espejo que favorece a cualquier tono de piel.",
     "rating": 4.8,
-    "img": "Gloss Bomb"
+    "image": "/img/FENTY BEAUTY Gloss Bomb Universal Lip Luminizer.jpeg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "price": 699,
     "desc": "Base de cobertura media-alta con acabado semi-mate, disponible en 50 tonos.",
     "rating": 4.6,
-    "img": "Pro Filt'r Foundation"
+    "image": "/img/FENTY BEAUTY Pro Filt'r Soft Matte Foundation.jpeg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "price": 659,
     "desc": "Iluminador en polvo ultra pigmentado con acabado tipo foco.",
     "rating": 4.7,
-    "img": "Killawatt Highlighter"
+    "image": "/img/FENTY BEAUTY Killawatt Highlighter.jpeg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "price": 529,
     "desc": "Rubor líquido de larga duración que se difumina con los dedos para un efecto natural.",
     "rating": 4.9,
-    "img": "Soft Pinch Blush"
+    "image": "/img/RARE BEAUTY Soft Pinch Liquid Blush.jpeg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "price": 549,
     "desc": "Iluminador líquido de brillo suave que se funde con la piel sin dejar brillos plateados.",
     "rating": 4.7,
-    "img": "Positive Light Highlighter"
+    "image": "/img/RARE BEAUTY Positive Light Liquid Highlighter.jpeg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "price": 479,
     "desc": "Delineador de punta ultra fina con tinta mate resistente al agua por 16 horas.",
     "rating": 4.6,
-    "img": "Perfect Strokes Liner"
+    "image": "/img/RARE BEAUTY Perfect Strokes Matte Liquid Liner.jpeg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "price": 559,
     "desc": "Corrector cremoso de cobertura completa que ilumina e hidrata la piel.",
     "rating": 4.8,
-    "img": "Shape Tape Concealer"
+    "image": "/img/TARTE Shape Tape Concealer.jpeg"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "price": 399,
     "desc": "Bálsamo labial jugoso con un toque de color y aceite de maracuyá hidratante.",
     "rating": 4.6,
-    "img": "Maracuja Juicy Lip"
+    "image": "/img/TARTE Maracuja Juicy Lip.jpeg"
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "price": 459,
     "desc": "Rubor en polvo de larga duración con arcilla amazónica que nutre la piel.",
     "rating": 4.5,
-    "img": "Amazonian Clay Blush"
+    "image": "/img/TARTE Amazonian Clay Blush.jpeg"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "price": 489,
     "desc": "Mascara voluminizadora icónica que da pestañas dramáticas sin grumos.",
     "rating": 4.7,
-    "img": "Better Than Sex Mascara"
+    "image": "/img/TOO FACED Better Than Sex Mascara.jpeg"
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "price": 829,
     "desc": "Paleta de sombras con aroma a chocolate en tonos neutros y cálidos.",
     "rating": 4.8,
-    "img": "Chocolate Bar Palette"
+    "image": "/img/TOO FACED Chocolate Bar Eyeshadow Palette.jpeg"
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "price": 719,
     "desc": "Base líquida de cobertura media-completa con acabado natural tipo segunda piel.",
     "rating": 4.6,
-    "img": "Born This Way Foundation"
+    "image": "/img/TOO FACED Born This Way Foundation.jpeg"
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "price": 599,
     "desc": "El rubor icónico en tono durazno-rosa con un ligero brillo dorado.",
     "rating": 4.9,
-    "img": "Orgasm Blush"
+    "image": "/img/NARS Orgasm Blush.jpeg"
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "price": 649,
     "desc": "Corrector cremoso de cobertura media que ilumina e hidrata sin marcar líneas.",
     "rating": 4.7,
-    "img": "Radiant Creamy Concealer"
+    "image": "/img/NARS Radiant Creamy Concealer.jpeg"
   },
   {
     "id": 18,
@@ -159,6 +159,6 @@
     "price": 509,
     "desc": "Labial mate de larga duración con fórmula aterciopelada no resecante.",
     "rating": 4.5,
-    "img": "Velvet Matte Lipstick"
+    "image": "/img/NARS Velvet Matte Lipstick.jpeg"
   }
 ]
