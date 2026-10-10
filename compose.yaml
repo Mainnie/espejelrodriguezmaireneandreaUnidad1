@@ -1,3 +1,5 @@
+name: mainnies-beauty
+
 services:
   web:
     build: .
