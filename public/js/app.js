@@ -20,7 +20,7 @@ function render(){
   grid.innerHTML = list.map(p=>{
     const revs=reviewsFor(p.id);
     return `<div class="card">
-      <div class="imgph">Imagen<br>${p.img}</div>
+      <div class="imgph"><img class="product-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Imagen no disponible'}))"></div>
       <div class="card-body">
         <span class="brand">${p.brand.toUpperCase()}</span>
         <h3>${p.name}</h3>

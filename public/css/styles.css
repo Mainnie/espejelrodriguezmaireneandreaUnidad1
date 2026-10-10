@@ -37,6 +37,7 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;padding-bottom:20px}
 .card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;background:#fff}
 .imgph{aspect-ratio:1;background:repeating-linear-gradient(135deg,#faf9fb,#faf9fb 10px,#f2f0f5 10px,#f2f0f5 20px);display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;text-align:center;padding:10px}
+.product-image{display:block;width:100%;height:100%;object-fit:contain}
 .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card-body .brand{font-size:11.5px;font-weight:700;letter-spacing:.02em;color:var(--pink-txt)}
 .card-body h3{font-size:16.5px;color:var(--ink)}

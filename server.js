@@ -4,11 +4,12 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 
 const publicDir = path.resolve(__dirname, 'public');
+const imagesDir = path.resolve(__dirname, 'img');
 const catalogFile = path.resolve(__dirname, 'catalog', 'products.json');
 const dataDir = path.resolve(__dirname, 'data');
 const ordersFile = path.join(dataDir, 'orders.json');
 const products = JSON.parse(fs.readFileSync(catalogFile, 'utf8'));
-const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 
 function json(res, status, value) {
   res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
@@ -63,8 +64,11 @@ const server = http.createServer(async (req, res) => {
   let pathname;
   try { pathname = decodeURIComponent(url.pathname); } catch { res.writeHead(400).end('Solicitud inválida'); return; }
   if (pathname === '/') pathname = '/index.html';
-  const file = path.resolve(publicDir, `.${pathname}`);
-  if (file !== publicDir && !file.startsWith(publicDir + path.sep)) { res.writeHead(403).end('Prohibido'); return; }
+  const imageRequest = pathname.startsWith('/img/');
+  const rootDir = imageRequest ? imagesDir : publicDir;
+  const relativePath = imageRequest ? pathname.slice('/img'.length) : pathname;
+  const file = path.resolve(rootDir, `.${relativePath}`);
+  if (file !== rootDir && !file.startsWith(rootDir + path.sep)) { res.writeHead(403).end('Prohibido'); return; }
   fs.readFile(file, (error, content) => {
     if (error) { res.writeHead(error.code === 'ENOENT' ? 404 : 500).end(error.code === 'ENOENT' ? 'No encontrado' : 'Error del servidor'); return; }
     res.writeHead(200, { 'Content-Type': mimeTypes[path.extname(file).toLowerCase()] || 'application/octet-stream', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'Cache-Control': 'no-cache' });
